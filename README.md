@@ -1,2 +1,4 @@
-# everestboot
-A hyperlink database designed to store and select links based on meta-tags.
+appengine-skeleton
+=============================
+
+This is a generated application from the appengine-skeleton archetype.
