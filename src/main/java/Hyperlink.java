@@ -1,9 +1,9 @@
 import java.util.*
 
 public Hyperlink implements IHyperlink{
-    int id;
-    String name, url;
-    List<String> tags = new List<String>();
+    private int id;
+    private String name, url;
+    private List<String> tags = new List<String>();
     public void setId(int id){
 	this.id = id;
     }
