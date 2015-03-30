@@ -26,7 +26,7 @@ public class AddServlet extends HttpServlet {
 		String url = req.getParameter("url");
 		String tags = req.getParameter("tags");
 		String[] tagsArray;
-		List<String> tagsList;
+		List<String> tagsList;e
 		try {
 			tagsArray = tags.split(",");
 			tagsList = Arrays.asList(tagsArray);
@@ -37,8 +37,13 @@ public class AddServlet extends HttpServlet {
 		}
 		String comment = req.getParameter("comment");
 
-		IDBHandler dbhandler = DBHandler.getInstance();
-
+		IHyperlink hyperlink = new Hyperlink(name, url, tags) //add comments
 		
+		IDBHandler dbhandler = DBHandler.getInstance();
+		
+		dbhandler.add(hyperlink);
+
+		req.getRequestDispatcher(req.getContextPath()+"added.jsp").forward(req, resp);
+
 	}
 }
