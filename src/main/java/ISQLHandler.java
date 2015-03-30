@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 public interface ISQLHandler {
     public void add (IHyperlink x) ;
     public List<IHyperlink> search (String s) ;

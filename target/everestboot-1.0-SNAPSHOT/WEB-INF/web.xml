@@ -8,12 +8,19 @@
 		<servlet-name>everestboot</servlet-name>
 		<servlet-class>EverestBootServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>everestboot</servlet-name>
 		<url-pattern>/everestboot</url-pattern>
 	</servlet-mapping>
+	<!--servlet-mapping>
+		<servlet-name>comingsoon</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping-->
+	
 	<welcome-file-list>
-		<welcome-file>everestboot.jsp</welcome-file>
+		<welcome-file>home.jsp</welcome-file>
+		<!--welcome-file>everestboot.jsp</welcome-file-->
 	</welcome-file-list>
 
 </web-app>
