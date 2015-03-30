@@ -1,4 +1,4 @@
-appengine-skeleton
-=============================
++# everestboot
++A hyperlink database designed to store and select links based on meta-tags.
 
-This is a generated application from the appengine-skeleton archetype.
+everestboot.appspot.com
