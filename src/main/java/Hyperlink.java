@@ -31,4 +31,7 @@ public Hyperlink implements IHyperlink{
     public void addTag(String tag) {
 	tags.add (tag);
     }
+    public List<String> getTags () {
+	return tags;
+    }
 }
