@@ -1,6 +1,6 @@
-import java.util.*
+import java.util.*;
 
-public Hyperlink implements IHyperlink{
+public class Hyperlink implements IHyperlink{
     private long id;
     private String name, url;
     private List<String> tags;

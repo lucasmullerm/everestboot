@@ -1,9 +1,9 @@
 import java.util.*;
 
 import com.google.appengine.api.datastore.*;
-import com.google.appengine.api.users.*
+import com.google.appengine.api.users.*;
 
-public DBHandler implements IDBHandler {
+public class DBHandler implements IDBHandler {
     private static DBHandler handler = new DBHandler ();
     private DatastoreService datastore;
     private DBHandler () {
