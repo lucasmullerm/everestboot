@@ -3,12 +3,12 @@ import java.util.*
 public Hyperlink implements IHyperlink{
     private long id;
     private String name, url;
-    private List<String> tags = new List<String>();
-    public Hyperlink (long id, String name, String url, List<String> tags) {
-	this.id = id;
-	this.name = name;
-	this.url = url;
-	this.tags = new ArrayList<String>(tags);
+    private List<String> tags;
+    public Hyperlink (int id, String name, String url, List<String> tags) {
+		this.id = id;
+		this.name = name;
+		this.url = url;
+		this.tags = new ArrayList<String>(tags);
     }
     public void setId(long id){
 	this.id = id;
