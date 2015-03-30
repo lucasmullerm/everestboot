@@ -1,5 +1,5 @@
 public interface IHyperlink {
-    public void setId (int id) ;
+    public void setId (long id) ;
     public int getId ();
     public void setName (String name);
     public String getName ();

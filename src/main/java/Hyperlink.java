@@ -1,7 +1,7 @@
 import java.util.*
 
 public Hyperlink implements IHyperlink{
-    private int id;
+    private long id;
     private String name, url;
     private List<String> tags;
     public Hyperlink (int id, String name, String url, List<String> tags) {
@@ -10,15 +10,10 @@ public Hyperlink implements IHyperlink{
 		this.url = url;
 		this.tags = new ArrayList<String>(tags);
     }
-    public Hyperlink (String name, String url, List<String> tags) {
-		this.name = name;
-		this.url = url;
-		this.tags = new ArrayList<String>(tags);
-    }
-    public void setId(int id){
+    public void setId(long id){
 	this.id = id;
     }
-    public int getId() {
+    public long getId() {
 	return id;
     }
     public void setName(String name){

@@ -1,9 +1,9 @@
 
 import java.util.*;
 
-public interface ISQLHandler {
+public interface IDBHandler {
     public void add (IHyperlink x) ;
-    public static ISQLHandler getInstance ();
+    public static IDBHandler getInstance ();
     public List<IHyperlink> search (String s) ;
     public List<IHyperlink> tagged (String s) ;
     public void remove (int id) ;
