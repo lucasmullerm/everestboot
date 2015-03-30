@@ -8,7 +8,7 @@ public Hyperlink implements IHyperlink{
 	this.id = id;
 	this.name = name;
 	this.url = url;
-	this.tags = tags;
+	this.tags = new ArrayList<String>(a);
     }
     public void setId(int id){
 	this.id = id;
