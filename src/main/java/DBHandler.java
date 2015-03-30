@@ -33,6 +33,7 @@ public DBHandler implements IDBHandler {
 	return ans;
     }
     public void remove (long id) {
-	Key key = 
+	Key key = Key (id);
+	datastore.delete (key);
     }
 }
