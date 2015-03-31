@@ -33,12 +33,11 @@ public class DBHandler {
 	List<Entity> ret = datastore.prepare (query).asList(FetchOptions.Builder.withLimit(1000));
 	Hyperlink ans;
 	if (ret.size () == 1) {
-	    long id = (long)ret.get (i).getProperty ("id");
-	    String name = (String)ret.get(i).getProperty ("name");
-	    String url = (String)ret.get(i).getProperty("url");
-	    List<String> tags = (List<String>)ret.get(i).getProperty("tags");
-	    String comment = (String)ret.get(i).getProperty("comment");
-	    ans.add (new Hyperlink (id, name, url, tags, comment));
+	    String name = (String)ret.get(0).getProperty ("name");
+	    String url = (String)ret.get(0).getProperty("url");
+	    List<String> tags = (List<String>)ret.get(0).getProperty("tags");
+	    String comment = (String)ret.get(0).getProperty("comment");
+	    ans = new Hyperlink (id, name, url, tags, comment);
 	}
 	else
 	    ans = new Hyperlink (-1, "", "", new ArrayList<String>(), "");
@@ -70,7 +69,7 @@ public class DBHandler {
 	List<IHyperlink> ans = new ArrayList<IHyperlink> ();
 	for (int i = 0; i < ret.size (); i++) {
 	    long id = (long)ret.get (i).getProperty ("id");
-	    String name = (String)ret.geet (i).getProperty ("name");
+	    String name = (String)ret.get (i).getProperty ("name");
 	    String url = (String)ret.get (i).getProperty ("url");
 	    List<String> tags = (List<String>)ret.get (i).getProperty ("tags");
 	    String comment = (String)ret.get (i).getProperty ("comment");
