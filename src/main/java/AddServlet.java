@@ -15,7 +15,7 @@ public class AddServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws IOException, ServletException {
 
-		req.getRequestDispatcher(req.getContextPath()+"add.jsp").forward(req, resp);
+		req.getRequestDispatcher("/add.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class AddServlet extends HttpServlet {
 		
 		dbhandler.add(hyperlink);
 
-		req.getRequestDispatcher(req.getContextPath()+"added.jsp").forward(req, resp);
+		req.getRequestDispatcher("/added.jsp").forward(req, resp);
 
 	}
 }

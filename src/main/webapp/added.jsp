@@ -13,7 +13,7 @@
 </div>
 
 <br>
-<a href="http://everestboot.appspot.com">Voltar</a>
+<a href="/">Voltar</a>
 
 </body>
 </html>

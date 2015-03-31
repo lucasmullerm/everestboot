@@ -12,22 +12,23 @@
 
 <br><br>
 
-<a href="/add/">Adicionar hyperlink</a><br>
-<a href="/search/">Pesquisar por nome</a><br>
-<a href="/tagged/">Pesquisar por tag</a><br>
-
-<%
-
-	String var = request.getParameter("var");
-	if (var == null) {
-		var = "default";
-	}
-	pageContext.setAttribute("var", var);
-	
-
-%>
-
-<h1>${fn:escapeXml(var)}</h1>>
+<div>
+	<a href="/add/">Adicionar hyperlink</a><br>
+</div>
+<div>
+	<a href="/search/">Pesquisar por nome:</a><br>
+	<form action="/search" method="post">
+		<input type="text" name="name" />
+		<input type="submit" name="submit" value="Pesquisar" />
+	</form>
+</div>
+<div>
+	<a href="/tagged/">Pesquisar por tag:</a><br>
+	<form action="/tagged" method="post">
+		<input type="text" name="name" />
+		<input type="submit" name="submit" value="Pesquisar" />
+	</form>
+</div>
 
 </body>
 </html>

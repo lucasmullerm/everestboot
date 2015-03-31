@@ -13,12 +13,12 @@
 </div>
 
 <div>
-	<form action="/" method="post">
-		Nome: 									<input type="text" name="name" />
-		URL: 									<input type="text" name="url" />
-		Comentário: 							<input type="textarea" name="comment" />
-		Tags(Utilize vírgula como separador): 	<input type="text" name="tags" value="ex1,ex2" />
-												<input type="submit" name="add" value="Adicionar Hyperlink" />
+	<form action="/add/" method="post">
+		                          Nome:  <input type="text" name="name" /><br>
+		                          URL:   <input type="text" name="url" /><br>
+		                          Comentário:  <input type="textarea" name="comment" /><br>
+		Tags(Utilize vírgula como separador): <input type="text" name="tags" value="ex1,ex2" /><br>
+												<input type="submit" name="add" value="Adicionar Hyperlink" /><br>
 	</form>
 </div>	
 <br>
