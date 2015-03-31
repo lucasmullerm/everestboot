@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 
-public class SearchServlet extends HttpServlet {
+public class CommentedServlet extends HttpServlet {
 	
 //	@Override
 //	public void doGet(HttpServletRequest req, HttpServletResponse resp) 
@@ -24,7 +24,7 @@ public class SearchServlet extends HttpServlet {
 
 		String name = req.getParameter("name");
 		DBHandler dbhandler = DBHandler.getInstance();
-		List<IHyperlink> result = dbhandler.search(name);
+		List<IHyperlink> result = dbhandler.searchComment(name);
 		List<String> idList      = new ArrayList<String>();
 		List<String> nameList    = new ArrayList<String>();
 		List<String> urlList     = new ArrayList<String>();

@@ -40,7 +40,7 @@ public class DBHandler {
 	    ans = new Hyperlink (id, name, url, tags, comment);
 	}
 	else
-	    ans = new Hyperlink (-1, "", "", new ArrayList<String>(), "");
+	    ans = null;
 	return ans;
     }
     public List<IHyperlink> search (String s) {
@@ -94,7 +94,7 @@ public class DBHandler {
 	}
 	return ans;
     }
-    public void edit (Hyperlink x) {
+    public void edit (IHyperlink x) {
 	remove (x.getId ());
 	add (x);
     }

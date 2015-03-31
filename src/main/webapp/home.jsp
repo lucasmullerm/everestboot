@@ -24,7 +24,7 @@
 </div>
 <div>
 	Pesquisar por tag:<br>
-	<form action="/tagged" method="post">
+	<form action="/tagged/" method="post">
 		<input type="text" name="name" />
 		<input type="submit" name="submit" value="Pesquisar" />
 	</form>

@@ -23,17 +23,45 @@
 	<title>Busca por Nome</title>
 <%
 	}
-	else {
+	else if (type.equals("tagged")){
 %>
 	<title>Busca por Tag</title>
 <%
 	}
+	else {
 %>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<title>Busca por Comentário</title>
+<%
+	}
+%>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+	<style type="text/css">
+		table {
+		    width:100%;
+		    table-layout: fixed;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		th, td {
+		    padding: 5px;
+		    text-align: center;
+		    width: 200px;
+		    height: 50px;
+		    word-wrap: break-word;
+		}
+		table#t01 tr:nth-child(even) {
+		    background-color: #eee;
+		}
+		table#t01 tr:nth-child(odd) {
+		   background-color:#fff;
+		}
+		table#t01 th	{
+		    background-color: black;
+		    color: white;
+		}
+	</style>
 </head>
 
 

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Add Hyperlink</title>
+	<title>Adicionar Hyperlink</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 </head>
 
