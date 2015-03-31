@@ -17,7 +17,7 @@
 </div>
 <div>
 	<a href="/search/">Pesquisar por nome:</a><br>
-	<form action="/search" method="post">
+	<form action="/search/" method="post">
 		<input type="text" name="name" />
 		<input type="submit" name="submit" value="Pesquisar" />
 	</form>

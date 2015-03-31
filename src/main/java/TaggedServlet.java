@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 
-public class SearchServlet extends HttpServlet {
+public class TaggedServlet extends HttpServlet {
 	
 //	@Override
 //	public void doGet(HttpServletRequest req, HttpServletResponse resp) 
@@ -24,10 +24,10 @@ public class SearchServlet extends HttpServlet {
 
 		String name = req.getParameter("name");
 		DBHandler dbhandler = DBHandler.getInstance();
-		List<IHyperlink> result = dbhandler.search(name);
+		List<IHyperlink> result = dbhandler.tagged(name);
 		req.setAttribute("result", result);
-		req.setAttribute("type", "search");
-		req.getRequestDispatcher("/searchresult.jsp").forward(req, resp);
+		req.setAttribute("type", "tagged");
+		req.getRequestDispatcher("searchresult.jsp").forward(req, resp);
 
 	}
 }

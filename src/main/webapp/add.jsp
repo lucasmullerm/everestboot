@@ -16,7 +16,7 @@
 	<form action="/add/" method="post">
 		                          Nome:  <input type="text" name="name" /><br>
 		                          URL:   <input type="text" name="url" /><br>
-		                          Comentário:  <input type="textarea" name="comment" /><br>
+		                          Comentário:  <textarea name="comment" cols="50" rows="5"></textarea><br>
 		Tags(Utilize vírgula como separador): <input type="text" name="tags" value="ex1,ex2" /><br>
 												<input type="submit" name="add" value="Adicionar Hyperlink" /><br>
 	</form>
