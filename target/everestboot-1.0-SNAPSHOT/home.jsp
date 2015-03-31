@@ -15,8 +15,6 @@
 <a href="/add/">Adicionar hyperlink</a><br>
 <a href="/search/">Pesquisar por nome</a><br>
 <a href="/tagged/">Pesquisar por tag</a><br>
-<a href="/delete/">Deletar hyperlink</a><br>
-
 
 <%
 
@@ -24,7 +22,7 @@
 	if (var == null) {
 		var = "default";
 	}
-	//pageContext.setAttribute("var", var);
+	pageContext.setAttribute("var", var);
 	
 
 %>

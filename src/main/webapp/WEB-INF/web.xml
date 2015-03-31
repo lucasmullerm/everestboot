@@ -12,8 +12,8 @@
 	<servlet>
 		<servlet-name>add</servlet-name>
 		<servlet-class>AddServlet</servlet-class>
-	<!--/servlet>
-	<servlet>
+	</servlet>
+	<!--servlet>
 		<servlet-name>search</servlet-name>
 		<servlet-class>SearchServlet</servlet-class>
 	</servlet>

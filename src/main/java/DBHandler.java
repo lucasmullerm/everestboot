@@ -25,33 +25,38 @@ public class DBHandler {
     }
     public List<IHyperlink> search (String s) {
 	Query query = new Query ("Hyperlink");
-	query = query.filter ("name", s);
-	List<Entity> ret = Arrays.asList(datastore.prepare (query));
+	query = query.setFilter (new FilterPredicate("name",
+						     FilterOperator.EQUAL,
+						     s));
+	List<Entity> ret = datastore.prepare (query).asList(FetchOptions.Builder.withLimit(1000));
 	List<IHyperlink> ans = new ArrayList<IHyperlink> ();
 	for (int i = 0; i < ret.size (); i++) {
-	    ans.add (new Hyperlink (ret[i].getProperty ("id"),
-				    ret[i].getProperty ("name"),
-				    ret[i].getProperty ("url"),
-				    ret[i].getProperty ("tags")));
+	    long id = (long)ret.get (i).getProperty ("id");
+	    String name = (String)ret.get (i).getProperty ("name");
+	    String url = (String)ret.get (i).getProperty ("url");
+	    List<String> tags = (List<String>)ret.get (i).getProperty ("tags");
+	    ans.add (new Hyperlink (id, name, url, tags));
 	}
 	return ans;
     }
     public List<IHyperlink> tagged (String s) {
 	Query query = new Query ("Hyperlink");
-	query = query.setFilter ("tags", s);
-	List<Entity> ret = Arrays.asList(datastore.prepare (query));
-	List<Entity> ret = Arrays.asList(datastore.prepare (query));
+	query = query.setFilter (new FilterPredicate("tags", 
+						     FilterOperator.EQUAL,
+						     s));
+	List<Entity> ret = datastore.prepare (query).asList(FetchOptions.Builder.withLimit(1000));
 	List<IHyperlink> ans = new ArrayList<IHyperlink> ();
 	for (int i = 0; i < ret.size (); i++) {
-	    ans.add (new Hyperlink (ret[i].getProperty ("id"),
-				    ret[i].getProperty ("name"),
-				    ret[i].getProperty ("url"),
-				    ret[i].getProperty ("tags")));
+	    long id = (long)ret.get(i).getProperty ("id");
+	    String name = (String)ret.get(i).getProperty("name");
+	    String url = (String)ret.get(i).getProperty("url");
+	    List<String> tags = (List<String>)ret.get(i).getProperty("tags");
+	    ans.add (new Hyperlink (id, name, url, tags));
 	}
 	return ans;
     }
     public void remove (long id) {
-	Key key = new Key (id);
+	Key key = KeyFactory.createKey("Hyperlink", id);
 	datastore.delete (key);
     }
 }
