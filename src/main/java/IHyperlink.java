@@ -1,6 +1,7 @@
+import java.util.*;
 public interface IHyperlink {
     public void setId (long id) ;
-    public int getId ();
+    public long getId ();
     public void setName (String name);
     public String getName ();
     public void setURL (String url) ;
