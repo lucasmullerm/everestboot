@@ -19,7 +19,7 @@ public class Hyperlink implements IHyperlink{
 	return comment;
     }
     public List<String> getCommentWords () {
-	return Array.asList (comment.split ("\\s+");
+	return Array.asList (comment.split ("\\s+"));
     }
     public void setId(long id){
 	this.id = id;
