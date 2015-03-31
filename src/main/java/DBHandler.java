@@ -26,17 +26,32 @@ public class DBHandler {
     public List<IHyperlink> search (String s) {
 	Query query = new Query ("Hyperlink");
 	query = query.filter ("name", s);
-	List<IHyperlink> ans = Arrays.asList(datastore.prepare (query));
+	List<Entity> ret = Arrays.asList(datastore.prepare (query));
+	List<IHyperlink> ans = new ArrayList<IHyperlink> ();
+	for (int i = 0; i < ret.size (); i++) {
+	    ans.add (new Hyperlink (ret[i].getProperty ("id"),
+				    ret[i].getProperty ("name"),
+				    ret[i].getProperty ("url"),
+				    ret[i].getProperty ("tags")));
+	}
 	return ans;
     }
     public List<IHyperlink> tagged (String s) {
 	Query query = new Query ("Hyperlink");
-	query = query.filter ("tags", s);
-	List<IHyperlink> ans = Arrays.asList(datastore.prepare (query));
+	query = query.setFilter ("tags", s);
+	List<Entity> ret = Arrays.asList(datastore.prepare (query));
+	List<Entity> ret = Arrays.asList(datastore.prepare (query));
+	List<IHyperlink> ans = new ArrayList<IHyperlink> ();
+	for (int i = 0; i < ret.size (); i++) {
+	    ans.add (new Hyperlink (ret[i].getProperty ("id"),
+				    ret[i].getProperty ("name"),
+				    ret[i].getProperty ("url"),
+				    ret[i].getProperty ("tags")));
+	}
 	return ans;
     }
     public void remove (long id) {
-	Key key = Key (id);
+	Key key = new Key (id);
 	datastore.delete (key);
     }
 }
