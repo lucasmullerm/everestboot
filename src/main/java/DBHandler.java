@@ -3,7 +3,7 @@ import java.util.*;
 import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.users.*;
 
-public class DBHandler implements IDBHandler {
+public class DBHandler {
     private static DBHandler handler = new DBHandler ();
     private DatastoreService datastore;
     private DBHandler () {
@@ -23,13 +23,15 @@ public class DBHandler implements IDBHandler {
 	datastore.put (hyp);
     }
     public List<IHyperlink> search (String s) {
-	Query query = new Query ("Hyperlink").filter ("name", s);
-	List<IHyperlink> ans = datastore.prepare (query).asList();
+	Query query = new Query ("Hyperlink");
+	query = query.filter ("name", s);
+	List<IHyperlink> ans = Arrays.asList(datastore.prepare (query));
 	return ans;
     }
     public List<IHyperlink> tagged (String s) {
-	Query query = new Query ("Hyperlink").filter ("tags", s);
-	List<IHyperlink> ans = datastore.prepare (query).asList();
+	Query query = new Query ("Hyperlink");
+	query = query.filter ("tags", s);
+	List<IHyperlink> ans = Arrays.asList(datastore.prepare (query));
 	return ans;
     }
     public void remove (long id) {
