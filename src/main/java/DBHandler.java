@@ -2,6 +2,7 @@ import java.util.*;
 
 import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.users.*;
+import com.google.appengine.api.datastore.Query.*;
 
 public class DBHandler {
     private static DBHandler handler = new DBHandler ();
