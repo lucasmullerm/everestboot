@@ -37,9 +37,9 @@ public class AddServlet extends HttpServlet {
 		}
 		String comment = req.getParameter("comment");
 
-		IHyperlink hyperlink = new Hyperlink(-1, name, url, tagsList) //add comments
+		IHyperlink hyperlink = new Hyperlink(-1, name, url, tagsList); //add comments
 		
-		IDBHandler dbhandler = DBHandler.getInstance();
+		DBHandler dbhandler = DBHandler.getInstance();
 		
 		dbhandler.add(hyperlink);
 
