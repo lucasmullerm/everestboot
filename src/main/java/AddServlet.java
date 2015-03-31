@@ -25,6 +25,7 @@ public class AddServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String url = req.getParameter("url");
 		String tags = req.getParameter("tags");
+		String comment = req.getParameter("comment");
 		String[] tagsArray;
 		List<String> tagsList;
 		try {
@@ -36,9 +37,8 @@ public class AddServlet extends HttpServlet {
 			resp.getWriter().println("ERRO AO SEPARAR TAGS");
 			return;
 		}
-		String comment = req.getParameter("comment");
 
-		IHyperlink hyperlink = new Hyperlink(-1, name, url, tagsList); //add comments
+		IHyperlink hyperlink = new Hyperlink((long)(-1), name, url, tagsList, comment);
 		
 		DBHandler dbhandler = DBHandler.getInstance();
 		

@@ -25,7 +25,33 @@ public class SearchServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		DBHandler dbhandler = DBHandler.getInstance();
 		List<IHyperlink> result = dbhandler.search(name);
-		req.setAttribute("result", result);
+		List<String> idList      = new ArrayList<String>();
+		List<String> nameList    = new ArrayList<String>();
+		List<String> urlList     = new ArrayList<String>();
+		List<String> commentList = new ArrayList<String>();
+		List<String> tagList     = new ArrayList<String>();
+		for (IHyperlink h : result) {
+			idList.add(String.valueOf(h.getId()));
+			nameList.add(h.getName());
+			urlList.add(h.getURL());
+			commentList.add(h.getComment());
+			String tagString = null;
+			for (String tag : h.getTags()) {
+				if (tagString == null) {
+					tagString = tag;
+				}
+				else {
+					tagString += "," + tag;
+				}
+			}
+			tagList.add(tagString);	
+		}
+		//req.setAttribute("result", result);
+		req.setAttribute("idList", nameList);
+		req.setAttribute("nameList", nameList);
+		req.setAttribute("urlList", urlList);
+		req.setAttribute("tagList", tagList);
+		req.setAttribute("commentList", commentList);
 		req.setAttribute("type", "search");
 		req.getRequestDispatcher("/searchresult.jsp").forward(req, resp);
 

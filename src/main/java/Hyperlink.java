@@ -5,7 +5,7 @@ public class Hyperlink implements IHyperlink{
     private String name, url, comment;
     private List<String> tags;
     public Hyperlink (long id, String name, String url, 
-		      List<String> tags, String comments) {
+		      List<String> tags, String comment) {
 		this.id = id;
 		this.name = name;
 		this.url = url;

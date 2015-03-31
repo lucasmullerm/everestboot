@@ -16,14 +16,14 @@
 	<a href="/add/">Adicionar hyperlink</a><br>
 </div>
 <div>
-	<a href="/search/">Pesquisar por nome:</a><br>
+	Pesquisar por nome:<br>
 	<form action="/search/" method="post">
 		<input type="text" name="name" />
 		<input type="submit" name="submit" value="Pesquisar" />
 	</form>
 </div>
 <div>
-	<a href="/tagged/">Pesquisar por tag:</a><br>
+	Pesquisar por tag:<br>
 	<form action="/tagged" method="post">
 		<input type="text" name="name" />
 		<input type="submit" name="submit" value="Pesquisar" />
