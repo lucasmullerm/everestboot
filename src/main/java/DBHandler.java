@@ -56,6 +56,7 @@ public class DBHandler {
 	return ans;
     }
     public void remove (long id) {
-	datastore.delete (id);
+	Key key = KeyFactory.createKey("Hyperlink", id);
+	datastore.delete (key);
     }
 }

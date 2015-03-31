@@ -34,6 +34,7 @@ public class AddServlet extends HttpServlet {
 		catch (Exception e){
 			resp.setContentType("text/plain");
 			resp.getWriter().println("ERRO AO SEPARAR TAGS");
+			return;
 		}
 		String comment = req.getParameter("comment");
 
