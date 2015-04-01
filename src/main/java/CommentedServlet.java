@@ -52,7 +52,7 @@ public class CommentedServlet extends HttpServlet {
 		req.setAttribute("urlList", urlList);
 		req.setAttribute("tagList", tagList);
 		req.setAttribute("commentList", commentList);
-		req.setAttribute("type", "search");
+		req.setAttribute("type", "commented");
 		req.getRequestDispatcher("/searchresult.jsp").forward(req, resp);
 
 	}

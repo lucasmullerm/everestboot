@@ -61,11 +61,8 @@ public class EditServlet extends HttpServlet {
 			resp.getWriter().println("ERRO AO SEPARAR TAGS");
 			return;
 		}
-
 		IHyperlink hyperlink = new Hyperlink(id, name, url, tagsList, comment);
-		
 		DBHandler dbhandler = DBHandler.getInstance();
-		
 		dbhandler.edit(hyperlink);
 		req.getRequestDispatcher("/edited.jsp").forward(req, resp);
 

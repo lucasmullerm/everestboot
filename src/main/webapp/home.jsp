@@ -29,6 +29,13 @@
 		<input type="submit" name="submit" value="Pesquisar" />
 	</form>
 </div>
+<div>
+	Pesquisar por comentário:<br>
+	<form action="/commented/" method="post">
+		<input type="text" name="name" />
+		<input type="submit" name="submit" value="Pesquisar" />
+	</form>
+</div>
 
 </body>
 </html>
