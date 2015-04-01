@@ -28,7 +28,7 @@
 %>
 
 <div>
-	<form action="/add/" method="post">
+	<form action="/edit/" method="post">
 	 					 <input type="hidden" name="id" value="${fn:escapeXml(id)}" />
 		            Nome:  <input type="text" name="name" value="${fn:escapeXml(name)}" /><br>
 		            URL:   <input type="text" name="url" value="${fn:escapeXml(url)}" /><br>

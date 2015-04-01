@@ -106,7 +106,7 @@ public class DBHandler {
 						     FilterOperator.EQUAL,
 						     id));
 	List<Entity> ret = datastore.prepare (query).asList(FetchOptions.Builder.withLimit(1000));
-	Key key = ret[0].getKey();
+	Key key = ret.get(0).getKey();
 	datastore.delete (key);
     }
 }
