@@ -7,16 +7,18 @@ import com.google.appengine.api.datastore.Query.*;
 public class DBHandler {
     private static DBHandler handler = new DBHandler ();
     private DatastoreService datastore;
+    private Random rand;
     private DBHandler () {
 	datastore = DatastoreServiceFactory.getDatastoreService();
+	rand = new Random();
     }
     public static DBHandler getInstance () {
 	return handler;
     }
     public void add (IHyperlink x) {
 	Entity hyp = new Entity ("Hyperlink");
-	if (x.getId () == -1) 
-	    x.setId (hyp.getKey().getId());
+	if (x.getId () == (long)(-1)) 
+	    x.setId (rand.nextLong ());
 	hyp.setProperty ("id", x.getId ());
 	hyp.setProperty ("name", x.getName ());
 	hyp.setProperty ("url", x.getURL ());
@@ -99,7 +101,12 @@ public class DBHandler {
 	add (x);
     }
     public void remove (long id) {
-	Key key = KeyFactory.createKey("Hyperlink", id);
+	Query query = new Query ("Hyperlink");
+	query = query.setFilter (new FilterPredicate("id",
+						     FilterOperator.EQUAL,
+						     id));
+	List<Entity> ret = datastore.prepare (query).asList(FetchOptions.Builder.withLimit(1000));
+	Key key = ret[0].getKey();
 	datastore.delete (key);
     }
 }
